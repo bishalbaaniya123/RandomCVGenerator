@@ -1,16 +1,18 @@
 import json
 import os
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import cm
 import random
+
+from reportlab.lib.units import cm
+from reportlab.pdfgen import canvas
+
 # get data from files
+from data.educationSection import return_education_section
 from data.email import return_email
 from data.firstName import return_first_name
 from data.jobTitle import return_job_titles
 from data.lastName import return_last_name
 from data.location import return_locations
 from data.middleName import return_middle_name
-
 # get some names
 from data.phone_number import return_phone_number
 
@@ -23,11 +25,15 @@ location = random.choice(return_locations())
 
 phone_number_array = []
 emails = []
+education_section = []
 for _ in range(random.randint(0, 4)):
     phone_number_array.append(random.choice(return_phone_number()))
 
 for _ in range(random.randint(0, 4)):
     emails.append(random.choice(return_email()))
+
+for _ in range(random.randint(0, 4)):
+    education_section.append(return_education_section())
 
 # create json object
 finalJson = {
@@ -43,17 +49,66 @@ finalJson = {
             "phone": phone_number_array,
             "email": emails
         },
-        "educationSection": [
+        "educationSection": education_section,
+        "workExperience": [
             {
-                "college": "",
-                "dateStart": "2011",
-                "level": "Other",
-                "university": "Trinity International Higher Secondary School & College",
-                "degree": "Higher Secondary, Science",
-                "location": "Kathmandu",
-                "dateEnd": ""
+                "skills": {
+                    "softSkills": [],
+                    "database": [
+                        "MONGO"
+                    ],
+                    "framework": [
+                        "SPRING",
+                        "JWT"
+                    ],
+                    "webTechnologies": [],
+                    "programmingLanguage": [
+                        "JAVA"
+                    ],
+                    "softwareTools": [],
+                    "dataScientistSkill": [],
+                    "operatingSystem": [],
+                    "finance": [
+                        "LOGIC"
+                    ]
+                },
+                "dateStart": "March 2018",
+                "organization": "InfoTmT Pvt. Ltd.",
+                "jobTitle": "Full Stack Developer,",
+                "location": "Hattisar",
+                "dateEnd": "Present"
+            },
+            {
+                "skills": {
+                    "softSkills": [],
+                    "database": [
+                        "POSTGRE",
+                        "MONGO"
+                    ],
+                    "framework": [
+                        "SPRING",
+                        "SPRING BOOT"
+                    ],
+                    "webTechnologies": [],
+                    "programmingLanguage": [
+                        "JAVA",
+                        "SQL"
+                    ],
+                    "softwareTools": [],
+                    "dataScientistSkill": [],
+                    "operatingSystem": [],
+                    "finance": [
+                        "MANAGEMENT"
+                    ]
+                },
+                "dateStart": "August 2017",
+                "organization": "Gradle",
+                "jobTitle": "Intern Java Developer,",
+                "location": ".\n\n Used Bitbucket for version",
+                "dateEnd": "March 2018"
             }
         ]
+
     }
 }
 
