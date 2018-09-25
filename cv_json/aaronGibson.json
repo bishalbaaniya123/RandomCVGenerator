@@ -1,0 +1,31 @@
+{
+  "candidateDetail": {
+    "name": {
+      "firstName": "Aaron",
+      "surname": "Gibson",
+      "middleName": ""
+    },
+    "jobTitle": "Information Technology Senior",
+    "address": "Fairbanks",
+    "info": {
+      "phone": [
+      ],
+      "email": [
+      ]
+    },
+    "educationSection": [
+    ],
+    "workExperience": [
+      {
+        "skills": null,
+        "dateStart": "February 2015",
+        "organization": "Fairbanks Memorial Hospital Foundation Health Partners",
+        "jobTitle": "Manager of Customer Relations",
+        "location": "Fairbanks, AK",
+        "dateEnd": "Present"
+      }
+    ],
+    "skills": {
+    }
+  }
+}

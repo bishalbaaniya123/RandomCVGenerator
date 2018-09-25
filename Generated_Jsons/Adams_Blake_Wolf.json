@@ -1,0 +1,11 @@
+{
+  "candidateDetail": {
+    "name": {
+      "firstName": "Adams",
+      "middleName": "Blake",
+      "surname": "Wolf"
+    },
+    "jobTitle": "Advertising Manager",
+    "address": "Little Istanbul"
+  }
+}
