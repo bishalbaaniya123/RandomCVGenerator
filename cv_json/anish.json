@@ -1,0 +1,167 @@
+{
+  "candidateDetail": {
+    "name": {
+      "firstName": "Anish",
+      "surname": "Maha",
+      "middleName": ""
+    },
+    "jobTitle": "Full Stack Developer –",
+    "address": "Kathmandu",
+    "info": {
+      "phone": [
+        "9849892055"
+      ],
+      "email": [
+        "anizz.maharjan@outlook.com"
+      ]
+    },
+    "educationSection": [
+      {
+        "college": "",
+        "dateStart": "2011",
+        "level": "Other",
+        "university": "Trinity International Higher Secondary School & College",
+        "degree": "Higher Secondary, Science",
+        "location": "Kathmandu",
+        "dateEnd": ""
+      },
+      {
+        "college": "",
+        "dateStart": "2001",
+        "level": "Other",
+        "university": "Jubilant Higher Secondary School",
+        "degree": "School Leaving Certificate",
+        "location": "Kathmandu",
+        "dateEnd": ""
+      },
+      {
+        "college": "",
+        "dateStart": "Mar 23, 2016",
+        "level": "Other",
+        "university": "National Institute of Information Technology",
+        "degree": "Course : Core Java and Advance Java\n\nLeadership\n\nLeo Club of KTM Himchuli of Leo",
+        "location": "",
+        "dateEnd": "Aug 4, 2016"
+      },
+      {
+        "college": "",
+        "dateStart": "2013",
+        "level": "Bachelor's",
+        "university": "Tribhuvan University",
+        "degree": "Bachelors of Science in Computer Science and Information Technology\n\n(B.Sc.CSIT)",
+        "location": "Kathmandu",
+        "dateEnd": ""
+      }
+    ],
+    "workExperience": [
+      {
+        "skills": {
+          "softSkills": [],
+          "database": [
+            "MONGO"
+          ],
+          "framework": [
+            "SPRING",
+            "JWT"
+          ],
+          "webTechnologies": [],
+          "programmingLanguage": [
+            "JAVA"
+          ],
+          "softwareTools": [],
+          "dataScientistSkill": [],
+          "operatingSystem": [],
+          "finance": [
+            "LOGIC"
+          ]
+        },
+        "dateStart": "March 2018",
+        "organization": "InfoTmT Pvt. Ltd.",
+        "jobTitle": "Full Stack Developer,",
+        "location": "Hattisar",
+        "dateEnd": "Present"
+      },
+      {
+        "skills": {
+          "softSkills": [],
+          "database": [
+            "POSTGRE",
+            "MONGO"
+          ],
+          "framework": [
+            "SPRING",
+            "SPRING BOOT"
+          ],
+          "webTechnologies": [],
+          "programmingLanguage": [
+            "JAVA",
+            "SQL"
+          ],
+          "softwareTools": [],
+          "dataScientistSkill": [],
+          "operatingSystem": [],
+          "finance": [
+            "MANAGEMENT"
+          ]
+        },
+        "dateStart": "August 2017",
+        "organization": "Gradle",
+        "jobTitle": "Intern Java Developer,",
+        "location": ".\n\n Used Bitbucket for version",
+        "dateEnd": "March 2018"
+      }
+    ],
+    "yearsOfExp": 1,
+    "skills": {
+      "softSkills": [],
+      "database": [
+        "POSTGRE",
+        "MYSQL",
+        "MICROSOFT SQL SERVER",
+        "MONGO"
+      ],
+      "webTechnologies": [
+        "CSS",
+        "JSP",
+        "HTML",
+        "MVC",
+        "JQUERY"
+      ],
+      "framework": [
+        "SPRING",
+        "BOOTSTRAP",
+        "HIBERNATE",
+        "JWT",
+        "SPRING BOOT"
+      ],
+      "programmingLanguage": [
+        "JAVA",
+        "JAVASCRIPT",
+        "C++",
+        "C",
+        "J",
+        "PYTHON",
+        "ES",
+        "SQL"
+      ],
+      "softwareTools": [
+        "BRACKETS",
+        "ECLIPSE",
+        "INTELLIJ",
+        "SPRING TOOL SUITE"
+      ],
+      "dataScientistSkill": [
+        "AWS"
+      ],
+      "operatingSystem": [
+        "LINUX",
+        "WINDOWS"
+      ],
+      "finance": [
+        "MANAGEMENT",
+        "LOGIC",
+        "COMMUNICATION"
+      ]
+    }
+  }
+}

@@ -4,6 +4,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.units import cm
 import random
 # get data from files
+from data.email import return_email
 from data.firstName import return_first_name
 from data.jobTitle import return_job_titles
 from data.lastName import return_last_name
@@ -11,12 +12,22 @@ from data.location import return_locations
 from data.middleName import return_middle_name
 
 # get some names
+from data.phone_number import return_phone_number
+
 firstName = random.choice(return_first_name())
 middleName = random.choice(return_middle_name())
 lastName = random.choice(return_last_name())
 
 jobTitle = random.choice(return_job_titles())
 location = random.choice(return_locations())
+
+phone_number_array = []
+emails = []
+for _ in range(random.randint(0, 4)):
+    phone_number_array.append(random.choice(return_phone_number()))
+
+for _ in range(random.randint(0, 4)):
+    emails.append(random.choice(return_email()))
 
 # create json object
 finalJson = {
@@ -27,7 +38,22 @@ finalJson = {
             "surname": lastName
         },
         "jobTitle": jobTitle,
-        "address": location
+        "address": location,
+        "info": {
+            "phone": phone_number_array,
+            "email": emails
+        },
+        "educationSection": [
+            {
+                "college": "",
+                "dateStart": "2011",
+                "level": "Other",
+                "university": "Trinity International Higher Secondary School & College",
+                "degree": "Higher Secondary, Science",
+                "location": "Kathmandu",
+                "dateEnd": ""
+            }
+        ]
     }
 }
 
