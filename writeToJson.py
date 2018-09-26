@@ -15,6 +15,7 @@ from data.location import return_locations
 from data.middleName import return_middle_name
 # get some names
 from data.phone_number import return_phone_number
+from data.workExperience import return_work_experience
 
 firstName = random.choice(return_first_name())
 middleName = random.choice(return_middle_name())
@@ -26,6 +27,7 @@ location = random.choice(return_locations())
 phone_number_array = []
 emails = []
 education_section = []
+work_experience = []
 for _ in range(random.randint(0, 4)):
     phone_number_array.append(random.choice(return_phone_number()))
 
@@ -34,6 +36,9 @@ for _ in range(random.randint(0, 4)):
 
 for _ in range(random.randint(0, 4)):
     education_section.append(return_education_section())
+
+for _ in range(random.randint(0, 4)):
+    work_experience.append(return_work_experience())
 
 # create json object
 finalJson = {
@@ -50,65 +55,7 @@ finalJson = {
             "email": emails
         },
         "educationSection": education_section,
-        "workExperience": [
-            {
-                "skills": {
-                    "softSkills": [],
-                    "database": [
-                        "MONGO"
-                    ],
-                    "framework": [
-                        "SPRING",
-                        "JWT"
-                    ],
-                    "webTechnologies": [],
-                    "programmingLanguage": [
-                        "JAVA"
-                    ],
-                    "softwareTools": [],
-                    "dataScientistSkill": [],
-                    "operatingSystem": [],
-                    "finance": [
-                        "LOGIC"
-                    ]
-                },
-                "dateStart": "March 2018",
-                "organization": "InfoTmT Pvt. Ltd.",
-                "jobTitle": "Full Stack Developer,",
-                "location": "Hattisar",
-                "dateEnd": "Present"
-            },
-            {
-                "skills": {
-                    "softSkills": [],
-                    "database": [
-                        "POSTGRE",
-                        "MONGO"
-                    ],
-                    "framework": [
-                        "SPRING",
-                        "SPRING BOOT"
-                    ],
-                    "webTechnologies": [],
-                    "programmingLanguage": [
-                        "JAVA",
-                        "SQL"
-                    ],
-                    "softwareTools": [],
-                    "dataScientistSkill": [],
-                    "operatingSystem": [],
-                    "finance": [
-                        "MANAGEMENT"
-                    ]
-                },
-                "dateStart": "August 2017",
-                "organization": "Gradle",
-                "jobTitle": "Intern Java Developer,",
-                "location": ".\n\n Used Bitbucket for version",
-                "dateEnd": "March 2018"
-            }
-        ]
-
+        "workExperience": work_experience
     }
 }
 

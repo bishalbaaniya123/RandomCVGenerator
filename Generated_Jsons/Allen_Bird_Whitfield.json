@@ -1,0 +1,147 @@
+{
+  "candidateDetail": {
+    "name": {
+      "firstName": "Allen",
+      "middleName": "Bird",
+      "surname": "Whitfield"
+    },
+    "jobTitle": "Admin Jobs",
+    "address": "Five Corners",
+    "info": {
+      "phone": [
+        "(814) 895-6680",
+        "(846) 322-4848",
+        "(918) 260-8665"
+      ],
+      "email": [
+        "kenja@yahoo.ca",
+        "peoplesr@aol.com"
+      ]
+    },
+    "educationSection": [
+      {
+        "college": "Pepperdine University",
+        "dateStart": "2017",
+        "level": "Bachelors",
+        "university": "Brown University",
+        "degree": "Associate Degree in Aviation Mechanics",
+        "location": "74 Hickory Road Perth Amboy, NJ 08861",
+        "dateEnd": ""
+      },
+      {
+        "college": "Vassar College",
+        "dateStart": "2012",
+        "level": "Bachelors",
+        "university": "Georgia Institute of Technology",
+        "degree": "Associate Degree in Aviation Mechanics",
+        "location": "299 S. Birchpond Dr. Upper Darby, PA 19082",
+        "dateEnd": "2016"
+      },
+      {
+        "college": "Pepperdine University",
+        "dateStart": "2001",
+        "level": "Doctoral",
+        "university": "United States Coast Guard Academy",
+        "degree": "Associate Degree in Elementary Education",
+        "location": "32 Victoria Ave. Meadville, PA 16335",
+        "dateEnd": "2005"
+      },
+      {
+        "college": "Centre College",
+        "dateStart": "2008",
+        "level": "Bachelors",
+        "university": "United States Coast Guard Academy",
+        "degree": "Associate Degree in Cabinet Design Technology",
+        "location": "74 Hickory Road Perth Amboy, NJ 08861",
+        "dateEnd": "2012"
+      }
+    ],
+    "workExperience": [
+      {
+        "skills": {
+          "softSkills": [],
+          "database": [
+            "REDIS",
+            "SQLITE",
+            "BERKELEY DB"
+          ],
+          "framework": [
+            "Express",
+            "Spring"
+          ],
+          "webTechnologies": [
+            "Dramatic Web Languages",
+            "Cloud Technologies",
+            "Web Security"
+          ],
+          "programmingLanguage": [
+            "PHP"
+          ],
+          "softwareTools": [
+            "Cloud9 IDE",
+            "CodeLobster",
+            "Spiralogics Application Architecture"
+          ],
+          "dataScientistSkill": [
+            "Constructing Predictive Models",
+            "Big Data",
+            "Creating Algorithms"
+          ],
+          "operatingSystem": [],
+          "finance": [
+            "Interpersonal skills",
+            "Problem Solving skills"
+          ]
+        },
+        "dateStart": "July 2011",
+        "organization": "Morgan Stanley",
+        "jobTitle": "Adjustment Clerk Jobs",
+        "location": "32 Victoria Ave. Meadville, PA 16335",
+        "dateEnd": "January 2015"
+      },
+      {
+        "skills": {
+          "softSkills": [
+            "Adaptability"
+          ],
+          "database": [
+            "MYSQL",
+            "SQLITE",
+            "POSTGRESQL"
+          ],
+          "framework": [],
+          "webTechnologies": [],
+          "programmingLanguage": [
+            "C#",
+            "Swift",
+            "C",
+            "Python"
+          ],
+          "softwareTools": [
+            "CodeLobster",
+            "NetBeans"
+          ],
+          "dataScientistSkill": [
+            "C++",
+            "AppEngine",
+            "Assertiveness",
+            "Creating Controls to Assure Accuracy of Data"
+          ],
+          "operatingSystem": [
+            "Windows",
+            "Ubuntu"
+          ],
+          "finance": [
+            "Management experience",
+            "Ability to communicate"
+          ]
+        },
+        "dateStart": "March 2008",
+        "organization": "Google",
+        "jobTitle": "Administrative Law Judge Jobs",
+        "location": "19 Branch Street West Babylon, NY 11704",
+        "dateEnd": "May 2012"
+      }
+    ]
+  }
+}
