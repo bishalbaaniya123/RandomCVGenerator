@@ -15,6 +15,7 @@ from data.location import return_locations
 from data.middleName import return_middle_name
 # get some names
 from data.phone_number import return_phone_number
+from data.skills import return_skills
 from data.workExperience import return_work_experience
 
 firstName = random.choice(return_first_name())
@@ -55,7 +56,9 @@ finalJson = {
             "email": emails
         },
         "educationSection": education_section,
-        "workExperience": work_experience
+        "workExperience": work_experience,
+        "yearsOfExp": random.randint(1, 5),
+        "skills": return_skills()
     }
 }
 
