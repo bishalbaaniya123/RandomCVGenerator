@@ -91,65 +91,108 @@ path_for_pdf_file = os.path.relpath('.\\Generated_Pdfs\\' + fileName, cur_path)
 c = canvas.Canvas(path_for_pdf_file + ".pdf")
 
 # generate the string
-final_string_to_be_rendered = "First Name: " + data['candidateDetail']['name']['firstName'] + \
-                              "\nMiddle Name: " + data['candidateDetail']['name']['middleName'] + \
-                              "\nLast Name: " + data['candidateDetail']['name']['surname'] + \
-                              "\nJob Title: " + data['candidateDetail']['jobTitle'] + \
-                              "\nAddress: " + data['candidateDetail']['address']
+initialPage = "Name: " + data['candidateDetail']['name']['firstName'] + \
+              " " + data['candidateDetail']['name']['middleName'] + \
+              " " + data['candidateDetail']['name']['surname'] + \
+              "\nJob Title: " + data['candidateDetail']['jobTitle'] + \
+              "\nAddress: " + data['candidateDetail']['address']
 
 for idx, val in enumerate(data['candidateDetail']['info']['phone']):
-    final_string_to_be_rendered += "\n\nPhone Number(" + str(idx + 1) + "): " \
-                                   + data['candidateDetail']['info']['phone'][idx]
+    initialPage += "\n\nPhone Number(" + str(idx + 1) + "): " \
+                   + data['candidateDetail']['info']['phone'][idx]
 for idx, val in enumerate(data['candidateDetail']['info']['email']):
-    final_string_to_be_rendered += "\n\ne-mail(" + str(idx + 1) + "): " \
-                                   + data['candidateDetail']['info']['email'][idx]
+    initialPage += "\n\ne-mail(" + str(idx + 1) + "): " \
+                   + data['candidateDetail']['info']['email'][idx]
+
+'''Print the text and go to new page'''
+# for line spacing
+text_object = c.beginText(2 * cm, 29.7 * cm - 2 * cm)
+
+# \n means nothing to reportLab unless this code executes
+for line in initialPage.splitlines(False):
+    text_object.textLine(line.rstrip())
+c.drawText(text_object)
+c.showPage()
+
+'''End Print the text and go to new page'''
+education_section_page = ""
+
 for idx, val in enumerate(data['candidateDetail']['educationSection']):
-    final_string_to_be_rendered += "\n\n\nEducation(" + str(idx + 1) + "): " \
-                                   + "\nCollege: " + data['candidateDetail']['educationSection'][idx]['college'] \
-                                   + "\nStart date: " + data['candidateDetail']['educationSection'][idx]['dateStart'] \
-                                   + "\nLevel: " + data['candidateDetail']['educationSection'][idx]['level'] \
-                                   + "\nUniversity: " + data['candidateDetail']['educationSection'][idx]['university'] \
-                                   + "\nDegree: " + data['candidateDetail']['educationSection'][idx]['degree'] \
-                                   + "\nLocation: " + data['candidateDetail']['educationSection'][idx]['location'] \
-                                   + "\nEnd Date: " + data['candidateDetail']['educationSection'][idx]['dateEnd'] \
-                                   + ""
+    education_section_page += "\n\n\nEducation(" + str(idx + 1) + "): " \
+                              + "\nCollege: " + data['candidateDetail']['educationSection'][idx]['college'] \
+                              + "\nStart date: " + data['candidateDetail']['educationSection'][idx]['dateStart'] \
+                              + "\nLevel: " + data['candidateDetail']['educationSection'][idx]['level'] \
+                              + "\nUniversity: " + data['candidateDetail']['educationSection'][idx]['university'] \
+                              + "\nDegree: " + data['candidateDetail']['educationSection'][idx]['degree'] \
+                              + "\nLocation: " + data['candidateDetail']['educationSection'][idx]['location'] \
+                              + "\nEnd Date: " + data['candidateDetail']['educationSection'][idx]['dateEnd'] \
+                              + ""
+
+'''Print the text and go to new page'''
+# for line spacing
+text_object = c.beginText(2 * cm, 29.7 * cm - 2 * cm)
+
+# \n means nothing to reportLab unless this code executes
+for line in education_section_page.splitlines(False):
+    text_object.textLine(line.rstrip())
+if education_section_page is not "":
+    c.drawText(text_object)
+    c.showPage()
+
+'''End Print the text and go to new page'''
+
+work_experience_page = ""
 for idx, val in enumerate(data['candidateDetail']['workExperience']):
-    final_string_to_be_rendered += "\n\n\nWork Experience(" + str(idx + 1) + "): " \
-                                   + "\nStart Date: " + data['candidateDetail']['workExperience'][idx]['dateStart'] \
-                                   + "\nOrganization: " + data['candidateDetail']['workExperience'][idx]['organization'] \
-                                   + "\nJob Title: " + data['candidateDetail']['workExperience'][idx]['jobTitle'] \
-                                   + "\nLocation: " + data['candidateDetail']['workExperience'][idx]['location'] \
-                                   + "\nEnd Date: " + data['candidateDetail']['workExperience'][idx]['dateEnd'] \
-                                   + "\nSkills" \
-                                   + ""
+    work_experience_page += "\n\n\nWork Experience(" + str(idx + 1) + "): " \
+                            + "\nStart Date: " + data['candidateDetail']['workExperience'][idx]['dateStart'] \
+                            + "\nOrganization: " + data['candidateDetail']['workExperience'][idx]['organization'] \
+                            + "\nJob Title: " + data['candidateDetail']['workExperience'][idx]['jobTitle'] \
+                            + "\nLocation: " + data['candidateDetail']['workExperience'][idx]['location'] \
+                            + "\nEnd Date: " + data['candidateDetail']['workExperience'][idx]['dateEnd'] \
+                            + "\nSkills" \
+                            + ""
     for key, value in data['candidateDetail']['workExperience'][idx]['skills'].items():
         for i, char in enumerate(key):
             if char.isupper():
                 key = key.replace(char, " " + char)
         key = key.title()
-        final_string_to_be_rendered += "\n\n" + key + ": "
+        work_experience_page += "\n\n" + key + ": "
         for itemValue in value:
-            final_string_to_be_rendered += itemValue + "\n"
+            work_experience_page += itemValue + "\n"
+'''Print the text and go to new page'''
+# for line spacing
+text_object = c.beginText(2 * cm, 29.7 * cm - 2 * cm)
 
-final_string_to_be_rendered += "\n\n\nSkills"
+# \n means nothing to reportLab unless this code executes
+for line in work_experience_page.splitlines(False):
+    text_object.textLine(line.rstrip())
+if work_experience_page is not "":
+    c.drawText(text_object)
+    c.showPage()
+
+'''End Print the text and go to new page'''
+skills_page = "\n\n\nSkills"
 for key, value in data['candidateDetail']['skills'].items():
     for i, char in enumerate(key):
         if char.isupper():
             key = key.replace(char, " " + char)
     key = key.title()
-    final_string_to_be_rendered += "\n\n" + key + ": "
+    skills_page += "\n\n" + key + ": "
     for itemValue in value:
-        final_string_to_be_rendered += itemValue + "\n"
+        skills_page += itemValue + "\n"
 
+'''Print the text and go to new page'''
 # for line spacing
 text_object = c.beginText(2 * cm, 29.7 * cm - 2 * cm)
 
 # \n means nothing to reportLab unless this code executes
-for line in final_string_to_be_rendered.splitlines(False):
+for line in skills_page.splitlines(False):
     text_object.textLine(line.rstrip())
+if skills_page is not "":
+    c.drawText(text_object)
+    c.showPage()
 
-# render the text to the pdf file
-c.drawText(text_object)
+'''End Print the text and go to new page'''
 
 # save the pdf
 c.save()

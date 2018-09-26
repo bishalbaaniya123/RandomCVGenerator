@@ -1,0 +1,135 @@
+{
+  "candidateDetail": {
+    "name": {
+      "firstName": "Albert",
+      "middleName": "Booker",
+      "surname": "West"
+    },
+    "jobTitle": "Account Manager",
+    "address": "Koreatown",
+    "info": {
+      "phone": [
+        "(846) 322-4848"
+      ],
+      "email": [
+        "crowl@yahoo.ca",
+        "mastinfo@live.com",
+        "dgriffith@sbcglobal.net"
+      ]
+    },
+    "educationSection": [
+      {
+        "college": "University of California, Santa Barbara",
+        "dateStart": "2007",
+        "level": "Bachelors",
+        "university": "Lehigh University",
+        "degree": "Associate Degree in Art",
+        "location": "74 Hickory Road Perth Amboy, NJ 08861",
+        "dateEnd": "2011"
+      },
+      {
+        "college": "Macalester College",
+        "dateStart": "2008",
+        "level": "Doctoral",
+        "university": "Lehigh University",
+        "degree": "Associate Degree in Agribusiness",
+        "location": "8314 Sugar Ave. Greensburg, PA 15601",
+        "dateEnd": "2012"
+      },
+      {
+        "college": "Brigham Young University",
+        "dateStart": "2007",
+        "level": "Doctoral",
+        "university": "Georgia Institute of Technology",
+        "degree": "Associate Degree in Behavioral Science",
+        "location": "8357 Tarkiln Hill St. Minneapolis, MN 55406",
+        "dateEnd": "2011"
+      }
+    ],
+    "workExperience": [
+      {
+        "skills": {
+          "softSkills": [],
+          "database": [
+            "SQLITE"
+          ],
+          "framework": [
+            "ANGULAR"
+          ],
+          "webTechnologies": [
+            "AGILE PROGRAMMING",
+            "DESIGN CONCEPTS",
+            "PROJECT MANAGEMENT"
+          ],
+          "programmingLanguage": [
+            "PHP",
+            "C++",
+            "C#"
+          ],
+          "softwareTools": [],
+          "dataScientistSkill": [
+            "CREATING CONTROLS TO ASSURE ACCURACY OF DATA"
+          ],
+          "operatingSystem": [
+            "MS-DOS",
+            "BEOS",
+            "IOS"
+          ],
+          "finance": [
+            "MANAGEMENT EXPERIENCE",
+            "KNOWLEDGE OF IT SOFTWARE"
+          ]
+        },
+        "dateStart": "January 2018",
+        "organization": "Hewlett-Packard",
+        "jobTitle": "Administrative Services Manager Jobs",
+        "location": "74 Hickory Road Perth Amboy, NJ 08861",
+        "dateEnd": "Present"
+      }
+    ],
+    "yearsOfExp": 4,
+    "skills": {
+      "softSkills": [
+        "CREATIVITY",
+        "LEADERSHIP"
+      ],
+      "database": [
+        "BERKELEY DB",
+        "MONGODB",
+        "RETHINKDB"
+      ],
+      "framework": [
+        "ANGULARJS",
+        "LARAVEL",
+        "CODEIGNITER",
+        "VUE.JS"
+      ],
+      "webTechnologies": [
+        "CMS/E-COMMERCE",
+        "KNOWLEDGE RESOURCES",
+        "VERSION CONTROL",
+        "WEB SECURITY"
+      ],
+      "programmingLanguage": [
+        "JAVA"
+      ],
+      "softwareTools": [
+        "NETBEANS",
+        "BOOTSTRAP",
+        "EXPRESSION STUDIO"
+      ],
+      "dataScientistSkill": [
+        "CONSULTING",
+        "COUCHDB"
+      ],
+      "operatingSystem": [
+        "NEXTSTEP",
+        "UNIX",
+        "UBUNTU"
+      ],
+      "finance": [
+        "PROBLEM SOLVING SKILLS"
+      ]
+    }
+  }
+}
