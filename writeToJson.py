@@ -17,6 +17,7 @@ from data.middleName import return_middle_name
 from data.phone_number import return_phone_number
 from data.skills import return_skills
 from data.workExperience import return_work_experience
+from reportlab.platypus import PageBreak
 
 firstName = random.choice(return_first_name())
 middleName = random.choice(return_middle_name())
@@ -30,10 +31,14 @@ emails = []
 education_section = []
 work_experience = []
 for _ in range(random.randint(0, 4)):
-    phone_number_array.append(random.choice(return_phone_number()))
+    item = random.choice(return_phone_number())
+    if item not in phone_number_array:
+        phone_number_array.append(item)
 
 for _ in range(random.randint(0, 4)):
-    emails.append(random.choice(return_email()))
+    item = random.choice(return_email())
+    if item not in emails:
+        emails.append(item)
 
 for _ in range(random.randint(0, 4)):
     education_section.append(return_education_section())
@@ -63,10 +68,10 @@ finalJson = {
 }
 
 # generate the fileName
-fileName = firstName + "_" + middleName + "_" + lastName + '.json'
+fileName = firstName + "_" + middleName + "_" + lastName
 
 # generate the json file and save it to the folder "Generated_Jsons"
-with open(os.path.join('Generated_Jsons/', fileName), "w") as outfile:
+with open(os.path.join('Generated_Jsons/', fileName + '.json'), "w") as outfile:
     json.dump(finalJson, outfile)
 
 '''
@@ -75,7 +80,7 @@ Use reportLab now to generate the pdf from the above generated json file and sav
 cur_path = os.path.dirname(__file__)
 
 # get the path of the recently generated json file
-path_for_json_file = os.path.relpath('.\\Generated_Jsons\\' + fileName, cur_path)
+path_for_json_file = os.path.relpath('.\\Generated_Jsons\\' + fileName + ".json", cur_path)
 
 # open the file (generated file)
 with open(path_for_json_file) as f:
@@ -86,9 +91,47 @@ path_for_pdf_file = os.path.relpath('.\\Generated_Pdfs\\' + fileName, cur_path)
 c = canvas.Canvas(path_for_pdf_file + ".pdf")
 
 # generate the string
-final_string_to_be_rendered = "FirstName: " + data['candidateDetail']['name']['firstName'] + \
-                              "\nMiddleName: " + data['candidateDetail']['name']['middleName'] + \
-                              "\nLastName: " + data['candidateDetail']['name']['surname']
+final_string_to_be_rendered = "First Name: " + data['candidateDetail']['name']['firstName'] + \
+                              "\nMiddle Name: " + data['candidateDetail']['name']['middleName'] + \
+                              "\nLast Name: " + data['candidateDetail']['name']['surname'] + \
+                              "\nJob Title: " + data['candidateDetail']['jobTitle'] + \
+                              "\nAddress: " + data['candidateDetail']['address']
+
+for idx, val in enumerate(data['candidateDetail']['info']['phone']):
+    final_string_to_be_rendered += "\n\nPhone Number(" + str(idx + 1) + "): " \
+                                   + data['candidateDetail']['info']['phone'][idx]
+for idx, val in enumerate(data['candidateDetail']['info']['email']):
+    final_string_to_be_rendered += "\n\ne-mail(" + str(idx + 1) + "): " \
+                                   + data['candidateDetail']['info']['email'][idx]
+for idx, val in enumerate(data['candidateDetail']['educationSection']):
+    final_string_to_be_rendered += "\n\n\nEducation(" + str(idx + 1) + "): " \
+                                   + "\nCollege: " + data['candidateDetail']['educationSection'][idx]['college'] \
+                                   + "\nStart date: " + data['candidateDetail']['educationSection'][idx]['dateStart'] \
+                                   + "\nLevel: " + data['candidateDetail']['educationSection'][idx]['level'] \
+                                   + "\nUniversity: " + data['candidateDetail']['educationSection'][idx]['university'] \
+                                   + "\nDegree: " + data['candidateDetail']['educationSection'][idx]['degree'] \
+                                   + "\nLocation: " + data['candidateDetail']['educationSection'][idx]['location'] \
+                                   + "\nEnd Date: " + data['candidateDetail']['educationSection'][idx]['dateEnd'] \
+                                   + ""
+for idx, val in enumerate(data['candidateDetail']['workExperience']):
+    final_string_to_be_rendered += "\n\n\nWork Experience(" + str(idx + 1) + "): " \
+                                   + "\nStart Date: " + data['candidateDetail']['workExperience'][idx]['dateStart'] \
+                                   + "\nOrganization: " + data['candidateDetail']['workExperience'][idx]['organization'] \
+                                   + "\nJob Title: " + data['candidateDetail']['workExperience'][idx]['jobTitle'] \
+                                   + "\nLocation: " + data['candidateDetail']['workExperience'][idx]['location'] \
+                                   + "\nEnd Date: " + data['candidateDetail']['workExperience'][idx]['dateEnd'] \
+                                   + "\nSkills" \
+                                   + ""
+    for key, value in data['candidateDetail']['workExperience'][idx]['skills'].items():
+        final_string_to_be_rendered += "\n\n" + key + ": "
+        for itemValue in value:
+            final_string_to_be_rendered += itemValue + "\n"
+
+final_string_to_be_rendered += "\n\n\nSkills"
+for key, value in data['candidateDetail']['skills'].items():
+    final_string_to_be_rendered += "\n\n" + key + ": "
+    for itemValue in value:
+        final_string_to_be_rendered += itemValue + "\n"
 
 # for line spacing
 text_object = c.beginText(2 * cm, 29.7 * cm - 2 * cm)

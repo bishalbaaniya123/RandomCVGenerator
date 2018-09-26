@@ -236,6 +236,11 @@ def return_work_experience():
         "location": random.choice(location),
         "dateEnd": end_date
     }
+    # for key, value in final_json['skills'].items():
+    #     # print("key", key, " value: ", value)
+    #     for item in value:
+    #         print(item)
+    #     print("\n")
     # print("\nfinancial_skills_array : ", final_json['skills']['finance'])
     return final_json
 
